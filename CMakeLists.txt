@@ -14,8 +14,8 @@ find_path(SQLITE_MODERN_CPP_INCLUDE_DIRS "sqlite_modern_cpp.h")
 find_package(nlohmann_json CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 
-add_library(sqlite_store SHARED "src/object_collection.cxx"
-                                "src/object_store.cxx")
+add_library(sqlite_store "src/object_collection.cxx"
+                         "src/object_store.cxx")
 target_link_libraries(sqlite_store PUBLIC  nlohmann_json
                                            nlohmann_json::nlohmann_json
                                    PRIVATE unofficial::sqlite3::sqlite3
