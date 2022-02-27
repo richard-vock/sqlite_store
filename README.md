@@ -14,6 +14,27 @@ secondary.
 
 ## Building
 
+The included `CMakeLists.txt` is supposed to be used with [vcpkg](https://vcpkg.io/), you might need to slightly adjust it if using
+only cmake or another package manager.
+
+The dependencies are:
+
+- [nlohmann JSON library](https://github.com/nlohmann)
+- [sqlite modern cpp wrapper](https://github.com/SqliteModernCpp)
+- [libfmt](https://github.com/fmtlib/fmt)
+
+If you are using vcpkg the library can be built as follows:
+
+    git clone https://github.com/richard-vock/sqlite_store
+    cd sqlite_store
+    git clone https://github.com/Microsoft/vcpkg.git
+    ./vcpkg/bootstrap-vcpkg.sh
+    ./vcpkg/vcpkg install nlohmann-json
+    ./vcpkg/vcpkg install sqlite-modern-cpp
+    ./vcpkg/vcpkg install libfmt
+    cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake
+    cmake --build build/
+
 ## Synopsis
 
 Initialize the database and create the corresponding file if it does not exist:
