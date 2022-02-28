@@ -29,9 +29,7 @@ If you are using vcpkg the library can be built as follows:
     cd sqlite_store
     git clone https://github.com/Microsoft/vcpkg.git
     ./vcpkg/bootstrap-vcpkg.sh
-    ./vcpkg/vcpkg install nlohmann-json
-    ./vcpkg/vcpkg install sqlite-modern-cpp
-    ./vcpkg/vcpkg install libfmt
+    ./vcpkg/vcpkg install
     cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake
     cmake --build build/
 
