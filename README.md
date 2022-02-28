@@ -12,6 +12,25 @@ secondary.
 
 ## Installation
 
+If you are using [vcpkg](https://vcpkg.io/), a port is included in my [registry](https://github.com/richard-vock/vcpkg-registry). Just inlude it in your `vcpkg-configuration.json` like:
+
+    {
+      "registries": [
+        {
+          "kind": "git",
+          "repository": "https://github.com/richard-vock/vcpkg-registry",
+          "packages": [ "sqlite-store" ],
+          "baseline": "212441de3f917386efdd5058183200a2c4709a73"
+        }
+      ]
+    }
+
+and then run
+
+    vcpkg install sqlite-store
+
+in order to build and install the static library.
+
 ## Building
 
 The included `CMakeLists.txt` is supposed to be used with [vcpkg](https://vcpkg.io/), you might need to slightly adjust it if using
